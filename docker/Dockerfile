@@ -34,7 +34,7 @@ RUN wget -O /tmp/install-tl-unx.tar.gz http://mirror.ctan.org/systems/texlive/tl
 # clone and build manim
 COPY . /opt/manim
 WORKDIR /opt/manim
-RUN pip install --no-cache .[jupyterlab]
+RUN pip install --no-cache .[jupyterlab] "manim-voiceover[azure,gtts]"
 
 RUN pip install -r docs/requirements.txt
 
